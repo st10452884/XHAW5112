@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Empowering the Nation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f5f5dc; 
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #d3c6a8; 
+        }
+        .nav {
+            display: flex;
+            gap: 15px;
+            position: relative; 
+        }
+        .nav a {
+            text-decoration: none;
+            padding: 10px;
+            background-color: #5f5b42;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .nav a:hover {
+            background-color: #4e4a36; 
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block; 
+        }
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .back-button {
+            background-color: #5f5b42;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .back-button:hover {
+            background-color: #4e4a36; 
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #d3c6a8; 
+            margin-top: 20px;
+        }
+        .social-icons {
+            margin-top: 10px;
+        }
+        h2 {
+            color: #5f5b42; 
+        }
+        .social-icons img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav">
+        <a href="Homepage.html">Home Page</a>
+        <a href="About us.html">About Us</a>
+        <div class="dropdown">
+            <a href="Courses.html" class="dropbtn">Courses</a>
+            <div class="dropdown-content">
+                <a href="Six-Month course.html">Six-month courses</a>
+                <a href="Six-Week course.html">Six-week courses</a>
+            </div>
+        </div>
+        <a href="Request a quote.html">Request a Quote</a>
+        <a href="Contact us.html">Contact Us</a>
+    </div>
+</header>
+
+<div class="content">
+    <a href="javascript:history.back()" class="back-button">Back</a>
+    <h1>About Us</h1>
+    
+    <h2>Our Mission</h2>
+    <p>At Empowering the Nation, we are dedicated to providing essential skills training for domestic workers and gardeners to help them achieve better job opportunities, higher wages, and the chance to start their own business. We believe that by equipping individuals with valuable skills, we are building stronger communities and creating pathways to success for those who need it most.</p>
+    
+    <h2>Our Story</h2>
+    <p>Empowering the Nation was founded in 2018 by Precious Radebe, a passionate advocate for the upliftment and education of domestic workers and gardeners. Inspired by her own family's experience-her parents and elderly relatives never had the opportunity to pursue formal eduaction or skills traininf-Precious established this initiative to help others from her community break free from that cycle.</p>
+    
+    <p>Thank you for being a part of our journey. Together, we can create a brighter future for all.</p>
+</div>
+
+<footer>
+    <p>&copy; 2018 Empowering the Nation. All rights reserved.</p>
+    <div class="social-icons">
+        <a href="https://facebook.com" target="_blank"><img src="pictures/facebook.jpeg" alt="Facebook"></a>
+        <a href="https://twitter.com" target="_blank"><img src="pictures/twitter.png" alt="Twitter"></a>
+        <a href="https://instagram.com" target="_blank"><img src="pictures/instagram.png" alt="Instagram"></a>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotation Fee</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f5f5dc; 
+            color: #333;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #5f5b42; 
+            color: white;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="email"], input[type="tel"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .course-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .course-list li {
+            margin-bottom: 10px;
+        }
+        .calculate-btn {
+            background-color: #5f5b42;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .calculate-btn:hover {
+            background-color: #4e4a36;
+        }
+        .total-fee {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .back-button {
+            background-color: #5f5b42;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .back-button:hover {
+            background-color: #4e4a36; 
+        }
+        .nav {
+            display: flex;
+            gap: 20px;
+            position: relative; 
+        }
+        .nav a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .nav a:hover {
+            background-color: #4e4a36; 
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block; 
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #d3c6a8; 
+        }
+        .social-icons a {
+            margin: 0 10px;
+            color: #5f5b42;
+            text-decoration: none;
+        }
+        .social-icons img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+        .selected-courses {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Quotation Fee</h1>
+    <nav class="nav">
+        <a href="About us.html">About Us</a>
+        <div class="dropdown">
+            <a href="Courses.html" class="dropbtn">Courses</a>
+            <div class="dropdown-content">
+                <a href="Six-Month course.html">Six-Month course</a>
+                <a href="Six-Week course.html">Six-Week course</a>
+            </div>
+        </div>
+        <a href="Request a quote.html">Request a Quote</a>
+        <a href="Contact us.html">Contact Us</a>
+    </nav>
+</header>
+
+<div class="form-container">
+    <a href="javascript:history.back()" class="back-button">Back</a>
+    <form id="quotationForm">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="number" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label>Courses Available:</label>
+            <ul class="course-list">
+                <li><input type="checkbox" class="course" data-price="1500" value="First Aid"> First Aid Course - R1500</li>
+                <li><input type="checkbox" class="course" data-price="1500" value="Sewing"> Sewing Course - R1500</li>
+                <li><input type="checkbox" class="course" data-price="1500" value="Landscaping"> Landscaping Course - R1500</li>
+                <li><input type="checkbox" class="course" data-price="1500" value="Life Skills"> Life Skills Course - R1500</li>
+                <li><input type="checkbox" class="course" data-price="750" value="Child Minding"> Child Minding Course - R750</li>
+                <li><input type="checkbox" class="course" data-price="750" value="Cooking"> Cooking Course - R750</li>
+                <li><input type="checkbox" class="course" data-price="750" value="Garden Maintenance"> Garden Maintenance Course - R750</li>
+            </ul>
+        </div>
+        <button type="button" class="calculate-btn" onclick="calculateTotal()">Calculate Total Fee</button>
+        <div class="total-fee" id="totalFee">Total Fee: R0.00</div>
+        <div class="selected-courses" id="selectedCourses"></div>
+        <div class="error" id="errorMessage"></div>
+    </form>
+</div>
+
+<script>
+    function calculateTotal() {
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const checkboxes = document.querySelectorAll('.course:checked');
+        let totalAmount = 0;
+        const selectedCourses = [];
+        const errorMessage = document.getElementById('errorMessage');
+        const selectedCoursesElement = document.getElementById('selectedCourses');
+
+        errorMessage.textContent = '';
+        selectedCoursesElement.textContent = '';
+
+        if (!name || !phone || !email) {
+            errorMessage.textContent = 'Please fill in all contact details.';
+            return;
+        }
+
+        if (checkboxes.length === 0) {
+            errorMessage.textContent = 'Please select at least one course.';
+            return;
+        }
+
+        checkboxes.forEach(checkbox => {
+            const price = parseFloat(checkbox.getAttribute('data-price'));
+            totalAmount += price;
+            selectedCourses.push(checkbox.value);
+        });
+
+        let discount = 0;
+        if (selectedCourses.length === 2) {
+            discount = 0.05;
+        } else if (selectedCourses.length === 3) {
+            discount = 0.10;
+        } else if (selectedCourses.length > 3) {
+            discount = 0.15;
+        }
+        const discountAmount = totalAmount * discount;
+        const discountedTotal = totalAmount - discountAmount;
+
+        const vat = 0.15;
+        const totalWithVAT = discountedTotal * (1 + vat);
+
+        document.getElementById('totalFee').innerText = `Total Fee: R${totalWithVAT.toFixed(2)} (including VAT & discount)`;
+
+        selectedCoursesElement.textContent = `You have applied for the following courses: ${selectedCourses.join(', ')}`;
+    }
+</script>
+
+<footer>
+    <p>&copy; 2018 Empowering the Nation. All rights reserved.</p>
+    <div class="social-icons">
+        <a href="https://facebook.com" target="_blank"><img src="pictures/facebook.jpeg" alt="Facebook"></a>
+        <a href="https://twitter.com" target="_blank"><img src="pictures/twitter.png" alt="Twitter"></a>
+        <a href="https://instagram.com" target="_blank"><img src="pictures/instagram.png" alt="Instagram"></a>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Six-Week Course - Empowering the Nation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f5f5dc; 
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #d3c6a8; 
+        }
+        .nav {
+            display: flex;
+            gap: 15px;
+            position: relative; 
+        }
+        .nav a {
+            text-decoration: none;
+            padding: 10px;
+            background-color: #5f5b42;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .nav a:hover {
+            background-color: #4e4a36; 
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block; 
+        }
+        .container {
+            display: flex;
+            flex: 1;
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+            box-sizing: border-box;
+        }
+        .content {
+            flex: 1;
+            padding-right: 20px;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #fafafa;
+            padding: 15px;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+        .sidebar h3 {
+            color: #5f5b42;
+            margin-bottom: 15px;
+        }
+        .sidebar a {
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #333;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #e8e4d0; 
+        }
+        .back-button {
+            background-color: #5f5b42;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .back-button:hover {
+            background-color: #4e4a36; 
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #d3c6a8; 
+            margin-top: 20px;
+        }
+        .social-icons {
+            margin-top: 10px;
+        }
+        .social-icons a {
+            text-decoration: none;
+            color: #5f5b42;
+            margin: 0 5px;
+        }
+        h1, h2 {
+            color: #5f5b42; 
+        }
+        .social-icons img {
+        width: 24px;
+        height: 24px;
+        vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav">
+        <a href="Homepage.html">Home Page</a>
+        <a href="About us.html">About Us</a>
+        <div class="dropdown">
+            <a href="Courses.html" class="dropbtn">Courses</a>
+            <div class="dropdown-content">
+                <a href="Six-Month course.html">Six-month courses</a>
+                <a href="Six-Week course.html">Six-week courses</a>
+            </div>
+        </div>
+        <a href="Request a quote.html">Request a Quote</a>
+        <a href="Contact us.html">Contact Us</a>
+    </div>
+</header>
+
+<div class="container">
+    <main class="content">
+        <a href="javascript:history.back()" class="back-button">Back</a>
+        <h1>Six-Month Course</h1>
+        
+        <h2>Learnerships</h2>
+        <p>Our Learnerships are comprehensive six-month programs that provide in-depth trainig and practical experience i key areas. These programs are perfect for those looking to gai extensive and advance their career prospects.</p>
+        
+        <h2>Domestic Worker Learnership Duration: 6 Months</h2>
+        <p>This program covers essential skills for household management, including care, safety, and efficient home organization. Gain practical experience and knowledge to enhance your role as a domestic worker</p>
+        
+        <h2>Gardening Learnership Duration: 6 months</h2>
+        <p>Focuses on horticulture, garden maintenance to excel and garden management.</p>
+    </main>
+
+    <aside class="sidebar">
+        <h3>Six-Month Courses</h3>
+        <a href="First aid.html">First Aid Course</a>
+        <a href="Sewing.html">Sewing</a>
+        <a href="Landscaping.html">Landscaping</a>
+        <a href="Life Skills.html">Life Skills</a>
+    </aside>
+</div>
+
+<footer>
+    <p>&copy; 2018 Empowering the Nation. All rights reserved.</p>
+    <div class="social-icons">
+        <a href="https://facebook.com" target="_blank"><img src="pictures/facebook.jpeg" alt="Facebook"></a>
+        <a href="https://twitter.com" target="_blank"><img src="pictures/twitter.png" alt="Twitter"></a>
+        <a href="https://instagram.com" target="_blank"><img src="pictures/instagram.png" alt="Instagram"></a>
+    </div>
+</footer>
+
+</body>
+</html>
